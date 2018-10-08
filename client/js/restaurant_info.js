@@ -70,7 +70,16 @@ fetchRestaurantFromURL = (callback) => {
         console.error(error);
         return;
       }
-      fillRestaurantHTML();
+      // Get the reviews back onto screen !!!
+      fetchReviewsByRestaurantID(restaurant.id, (error, reviews) => {
+        console.log(reviews);
+        if(error) {
+          console.log(error);
+          return;
+        }
+        fillRestaurantHTML();
+      });
+
       callback(null, restaurant)
     });
   }
