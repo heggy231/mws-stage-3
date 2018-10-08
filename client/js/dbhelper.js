@@ -63,18 +63,8 @@ class DBHelper {
   }
 
   // add my review of restaurant from form and send to database persist
-  static addReview() {
-    console.log("have review?");
-    const id = self.restaurant.id;
-    const name = document.getElementById("name").value;
-    const comments = document.getElementById("comments").value;
-    const rating = document.getElementById("rating").value;
-    const review = {
-      restaurant_id:id,
-      name,
-      rating: parseInt(rating),
-      comments
-    }
+  static addReview(review, callback) {
+
 
     fetch('http://localhost:1337/reviews/', {
       method: 'post',
@@ -86,14 +76,12 @@ class DBHelper {
       .then(res => res.json())
       .then((response) => {
         console.log('Success:', response);
-        // callback(null, response);
+        // window.location.reload();
+        callback(null, response);
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-
-    console.log(review);
-    return false;
   }
   /**
    * Fetch a restaurant by its ID.

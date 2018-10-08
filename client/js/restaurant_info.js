@@ -140,6 +140,34 @@ const fetchReviewsByRestaurantID = (restaurantID, callback) => {
   });
 };
 
+const addReview = () => {
+  console.log("have review?");
+  const id = self.restaurant.id;
+  const name = document.getElementById("name").value;
+  const comments = document.getElementById("comments").value;
+  const rating = document.getElementById("rating").value;
+  const review = {
+    restaurant_id:id,
+    name,
+    rating: parseInt(rating),
+    comments
+  };
+  DBHelper.addReview(review, (error, reviewResponse) => {
+    // what do i want to happen after review is in database
+    console.log(reviewResponse);
+    
+    document.getElementById('reviews-form').reset();
+
+    // // add review with others
+    const container = document.getElementById('reviews-container');
+    const ul = document.getElementById('reviews-list');
+    ul.appendChild(createReviewHTML(reviewResponse));
+    container.appendChild(ul);
+    // document.getElementById('reviews-form-container').innerHTML = '<h3 class="review-form-container__message--sucess">Thank you for adding a review!</h3>';
+  });
+  return false;
+};
+
 
 /**
  * Create all reviews HTML and add them to the webpage.
