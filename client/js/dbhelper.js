@@ -62,7 +62,10 @@ class DBHelper {
       });
   }
 
-
+  static addReview() {
+    console.log("have review?");
+    return false;
+  }
   /**
    * Fetch a restaurant by its ID.
    */
