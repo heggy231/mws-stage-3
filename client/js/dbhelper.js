@@ -70,7 +70,7 @@ class DBHelper {
     const comments = document.getElementById("comments").value;
     const rating = document.getElementById("rating").value;
     const review = {
-      id,
+      restaurant_id:id,
       name,
       rating: parseInt(rating),
       comments
