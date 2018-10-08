@@ -170,7 +170,7 @@ const addReview = () => {
 
 // love restaurant
 const setFavorite = () => {
-  console.log("Set favoriste?")
+  console.log("Set favorite?")
 };
 
 
