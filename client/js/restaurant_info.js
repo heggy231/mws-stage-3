@@ -155,7 +155,7 @@ const addReview = () => {
   DBHelper.addReview(review, (error, reviewResponse) => {
     // what do i want to happen after review is in database
     console.log(reviewResponse);
-    
+    // adding review to DOM
     document.getElementById('reviews-form').reset();
 
     // // add review with others
@@ -166,6 +166,11 @@ const addReview = () => {
     // document.getElementById('reviews-form-container').innerHTML = '<h3 class="review-form-container__message--sucess">Thank you for adding a review!</h3>';
   });
   return false;
+};
+
+// love restaurant
+const setFavorite = () => {
+  console.log("Set favoriste?")
 };
 
 
