@@ -62,8 +62,20 @@ class DBHelper {
       });
   }
 
+  // add my review of restaurant from form and send to database persist
   static addReview() {
     console.log("have review?");
+    const id = self.restaurant.id;
+    const name = document.getElementById("name").value;
+    const comments = document.getElementById("comments").value;
+    const rating = document.getElementById("rating").value;
+    const review = {
+      id,
+      name,
+      rating: parseInt(rating),
+      comments
+    }
+    console.log(review);
     return false;
   }
   /**
