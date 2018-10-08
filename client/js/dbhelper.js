@@ -232,5 +232,10 @@ class DBHelper {
     return marker;
   } */
 
+  // my favorite function that has 3 parameters 
+  static updateFavorite(restaurant.id, favoriteState, callback) {
+    
+  }
 }
+
 
