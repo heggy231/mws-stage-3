@@ -57,8 +57,8 @@
     <!-- Rating choose black triangle https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this -->
     <form method="POST" id="reviews-form"
           onsubmit="return DBHelper.addReview();">
-        <input name="name" id="name" >
-        <textarea name="review" id="comments"></textarea>
+        <input name="name" type="text" placeholder="name" id="name" >
+        <textarea name="review" id="comments" placeholder="comments"></textarea>
         <select name="review_rating" id="rating">
         <option value="1">1</option>
         <option value="2">2</option>
