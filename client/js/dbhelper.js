@@ -75,6 +75,23 @@ class DBHelper {
       rating: parseInt(rating),
       comments
     }
+
+    fetch('http://localhost:1337/reviews/', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+      },
+      body: JSON.stringify(review),
+    })
+      .then(res => res.json())
+      .then((response) => {
+        console.log('Success:', response);
+        // callback(null, response);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
     console.log(review);
     return false;
   }
