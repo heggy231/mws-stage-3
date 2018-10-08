@@ -77,6 +77,7 @@ fetchRestaurantFromURL = (callback) => {
           console.log(error);
           return;
         }
+        restaurant.reviews = reviews;
         fillRestaurantHTML();
       });
 

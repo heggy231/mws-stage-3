@@ -52,6 +52,22 @@
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
+    <!-- Add the review form to restaurant detail page -->
+    <!-- Rating choose black triangle https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this -->
+    <form method="POST" id="reviews-form"
+          onsubmit="return DBHelper.addReview();">
+        <input name="name" id="name" >
+        <textarea name="review" id="comments"></textarea>
+        <select name="review_rating" id="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button type="submit">Submint</button>
+    </form> 
+
       <!-- Beginning footer -->
     <footer id="footer">
       Copyright (c) 2017 <a href="index.html"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
