@@ -123,6 +123,14 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
   }
 }
 
+// PASSING the ID of each restaurant > getting the reviews
+const fetchReviewsByRestaurantID = (restaurantID, callback) => {
+  DBHelper.reviewsByID(restaurantID, (error, reviews) => {
+    callback(null, reviews);
+  });
+};
+
+
 /**
  * Create all reviews HTML and add them to the webpage.
  */
