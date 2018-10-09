@@ -474,6 +474,9 @@ nav[aria-label="breadcrumb"] {
 /* create review form with modal pop up
 https://jsbin.com/wocopaf/edit?html,css,output
 https://jsbin.com/biyocah/edit?html,css,output
+
+How To Create a Modal Box
+https://www.w3schools.com/howto/howto_css_modals.asp
 */
 .modal-wrapper {
   /* keeps the modal fixed of screen */
@@ -495,7 +498,11 @@ https://jsbin.com/biyocah/edit?html,css,output
 }
 
 .modal {
-  width: 10rem;
+  width: 50%;
   height: 20rem;
   background-color: rgba(245, 243, 132, 1); /* yellow */
+  padding: 1rem;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;  
 }
