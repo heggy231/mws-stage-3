@@ -473,6 +473,7 @@ nav[aria-label="breadcrumb"] {
 
 /* create review form with modal pop up
 https://jsbin.com/wocopaf/edit?html,css,output
+https://jsbin.com/biyocah/edit?html,css,output
 */
 .modal-wrapper {
   /* keeps the modal fixed of screen */
@@ -481,7 +482,7 @@ https://jsbin.com/wocopaf/edit?html,css,output
   left: 0;
   width: 100%; 
   height: 100%;
-  background-color:rgba(0, 0, 255, 0.3);
+  background-color:rgba(0, 0, 255, 0.3); /* purple*/
 
   /* helps to see outline of what I am working */
   /* outline: 2px solid red; */
@@ -489,6 +490,12 @@ https://jsbin.com/wocopaf/edit?html,css,output
   align-items: center;
   text-align: center;
   justify-content: center;
+  /* puts the modal on top */
   z-index: 1;
+}
 
+.modal {
+  width: 10rem;
+  height: 20rem;
+  background-color: rgba(245, 243, 132, 1); /* yellow */
 }
