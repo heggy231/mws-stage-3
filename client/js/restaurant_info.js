@@ -170,7 +170,9 @@ const addReview = () => {
 
 // love restaurant
 const setFavorite = () => {
-  DBHelper.updateFavorite(restaurant.id, true, (error, response) => {
+  console.log(self.restaurant);
+  // updating our server to different state
+  DBHelper.updateFavorite(self.restaurant.id, true, (error, response) => {
     console.log(response);
   });
   console.log("Set favorite?");

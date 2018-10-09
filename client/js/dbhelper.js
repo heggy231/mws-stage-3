@@ -233,8 +233,26 @@ class DBHelper {
   } */
 
   // my favorite function that has 3 parameters 
-  static updateFavorite(restaurant.id, favoriteState, callback) {
-    
+  static updateFavorite(id, favoriteState, callback) {
+    // fetching from my backend server looking for restaurant id
+    fetch(`http://localhost:1337/restaurants/${id}/`, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+      },
+      // converting into boolean from string 
+      body: JSON.stringify({is_favorite: favoriteState}),
+    })
+      .then(res => res.json())
+      .catch((error) => {
+        console.error('Error:', error);
+        callback(error, null);
+      })
+      .then((response) => {
+        console.log('Success:', response);
+        DBHelper.placeRestaurantIntoIDB(response);
+        callback(null, response);
+      });
   }
 }
 

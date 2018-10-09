@@ -470,3 +470,16 @@ nav[aria-label="breadcrumb"] {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar */
 }
+
+/* create review  */
+.modal-wrapper {
+  width: 100%; 
+  height: 100%;
+  /* keeps the modal fixed of screen */
+  position: fixed;
+  outline: 2px solid red;
+  background: white;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
