@@ -65,18 +65,18 @@
         <!-- Add the review form to restaurant detail page -->
         <!-- Rating choose black triangle https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this -->
         <span class="close">&times;</span>
-        <h1 id="restaurant-formHeading">Restaurant Review Form</h1>
+        <h1 id="restaurant-reviewFormHeading">Please submit your review</h1>
         <form method="POST" id="reviews-form" onsubmit="return addReview();">
-            <input name="name" type="text" placeholder="name" id="name" >
-            <textarea name="review" id="comments" placeholder="comments"></textarea>
-            <select name="review_rating" id="rating">1
+          <label for="name">Name:</label><input type="text" name="name" id="name" placeholder="e.g. John Doe">
+          <textarea name="review" id="comments" placeholder="comments"></textarea>
+          <select name="review_rating" id="rating">1
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-            <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div> <!-- close modal-wrapper -->

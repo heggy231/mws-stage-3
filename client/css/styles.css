@@ -508,7 +508,7 @@ https://www.w3schools.com/howto/howto_css_modals.asp
   text-align: left;  
 }
 
-#restaurant-formHeading {
+#restaurant-reviewFormHeading {
   /* browser font-size 16px > 16 * .625 (we set this on html earlier: html {font-size: 62.5%;} 10px */
   /* 1.6 rem * 10px = 16px */
   font-size: 2.7rem; /*body has 1.6rem*/
