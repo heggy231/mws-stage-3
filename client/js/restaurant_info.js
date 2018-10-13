@@ -170,14 +170,33 @@ const addReview = () => {
 
 // love restaurant on restaurant.html page
 const setFavorite = () => {
-  console.log(self.restaurant);
-  // updating our server to different state
-  DBHelper.updateFavorite(self.restaurant.id, true, (error, response) => {
-    console.log(response);
-  });
-  console.log("Set favorite?");
   const favoriteButton = document.getElementById("favorite-button");
-  favoriteButton.innerHTML = "Unfavorite";
+
+// this gets the text part of my favoriteButton
+const buttonTextContent = favoriteButton.textContent;
+
+// setting default favoriteValue inside of my server
+const favoriteValue = false;
+
+// When user click favorite it send to server that favorite value is true but default is false
+if (buttonTextContent === "Favorite") {
+  favoriteValue = true;
+}
+
+  console.log(favoriteButton.value);
+  console.log(favoriteButton.textContent);
+
+
+  // updating our server to different state
+  DBHelper.updateFavorite(self.restaurant.id, favoriteValue, (error, response) => {
+    console.log(response);
+      // display that value has changed!!
+
+    favoriteButton.innerHTML = "Unfavorite";
+  });
+
+
+
 };
 
 
