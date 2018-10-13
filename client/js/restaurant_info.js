@@ -90,6 +90,16 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
+
+  const favoriteButton = document.getElementById("favorite-button");
+
+  if(restaurant.is_favorite === true) {
+    favoriteButton.innerHTML = "Unfavorite";
+  // love it again after unloving it
+  } else {
+    favoriteButton.innerHTML = "Favorite";
+  } 
+
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
 
@@ -170,6 +180,7 @@ const addReview = () => {
 
 // love restaurant on restaurant.html page
 const setFavorite = () => {
+  console.log("setFavorite getting called now?");
   const favoriteButton = document.getElementById("favorite-button");
 
 // this gets the text part of my favoriteButton
@@ -191,7 +202,8 @@ if (buttonTextContent === "Favorite") {
       // display that value has changed!!
 
     // someone already loved button then -- after the response has changed > now unloving it
-    if(Response.is_favorite === true) {
+
+    if(response.is_favorite === true) {
       favoriteButton.innerHTML = "Unfavorite";
     // love it again after unloving it
     } else {
@@ -199,8 +211,6 @@ if (buttonTextContent === "Favorite") {
     }
    
   });
-
-
 
 };
 
