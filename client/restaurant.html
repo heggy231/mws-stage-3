@@ -53,7 +53,7 @@
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
-
+    <button id="add-newReviewButton" class="add-newReviewButton" action="" method="post">
     
       <!-- Beginning footer -->
     <footer id="footer">
@@ -67,7 +67,10 @@
         <span class="close">&times;</span>
         <h1 id="restaurant-reviewFormHeading">Please submit your review</h1>
         <form method="POST" id="reviews-form" onsubmit="return addReview();">
-          <label for="name">Name:</label><input type="text" name="name" id="name" placeholder="e.g. John Doe">
+      <!-- for="idname" is for screen reader a11y matches the input id="idname" 
+      remember to do this for every input! for a11y-->
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" placeholder="e.g. John Doe">
           <textarea name="review" id="comments" placeholder="comments"></textarea>
           <select name="review_rating" id="rating">1
             <option value="1">1</option>

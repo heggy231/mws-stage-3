@@ -498,12 +498,12 @@ https://www.w3schools.com/howto/howto_css_modals.asp
 }
 
 .modal {
-  /* display: none; */ /* hide by default */
+  display: none; /* hide by default */
   width: 50%;
   height: 20rem;
   background-color: rgba(245, 243, 132, 1); /* yellow */
   padding: 1rem;
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 auto;
   text-align: left;  
 }
