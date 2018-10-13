@@ -168,7 +168,7 @@ const addReview = () => {
   return false;
 };
 
-// love restaurant
+// love restaurant on restaurant.html page
 const setFavorite = () => {
   console.log(self.restaurant);
   // updating our server to different state
@@ -176,6 +176,8 @@ const setFavorite = () => {
     console.log(response);
   });
   console.log("Set favorite?");
+  const favoriteButton = document.getElementById("favorite-button");
+  favoriteButton.innerHTML = "Unfavorite";
 };
 
 
