@@ -280,12 +280,9 @@ document.querySelector('#add-newReviewButton').addEventListener('click', functio
   reviewForm.style.display = 'flex';
 });
 
-document.querySelector('#reviews-form__reset').addEventListener('click', function (event) {
-  //hide form
-  var reviewForm = document.querySelector('#reviews-form');
+document.querySelector('#reviews-formReset').addEventListener('click', function (event) {
+  //reset data on review form
+  var reviewForm = document.querySelector('#reviews-formReset');
   reviewForm.style.display = 'none';
 
-  //show add review button
-  var button = document.querySelector('#add-review__button');
-  button.style.display = 'block';
 });
