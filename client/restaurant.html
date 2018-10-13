@@ -64,7 +64,8 @@
       <div class="modal">
         <!-- Add the review form to restaurant detail page -->
         <!-- Rating choose black triangle https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this -->
-        <span class="close">&times;</span>
+        <!-- close x button for modal for reviews form -->
+        <span class="close" id="close-reviewsForm">&times;</span>
         <h1 id="restaurant-reviewFormHeading">Please submit your review</h1>
         <form method="POST" id="reviews-form" onsubmit="return addReview();">
       <!-- for="idname" is for screen reader a11y matches the input id="idname" 

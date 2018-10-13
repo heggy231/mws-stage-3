@@ -286,3 +286,11 @@ document.querySelector('#reviews-formReset').addEventListener('click', function 
   reviewForm.style.display = 'none';
 
 });
+
+document.querySelector('#close-reviewsForm').addEventListener('click', function (event) {
+  //reset data on review form
+  var reviewForm = document.querySelector('#close-reviewsForm');
+  reviewForm.style.display = 'none';
+
+});
+
