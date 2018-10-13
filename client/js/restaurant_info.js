@@ -176,23 +176,28 @@ const setFavorite = () => {
 const buttonTextContent = favoriteButton.textContent;
 
 // setting default favoriteValue inside of my server
-const favoriteValue = false;
+let favoriteValue = false;
 
 // When user click favorite it send to server that favorite value is true but default is false
 if (buttonTextContent === "Favorite") {
   favoriteValue = true;
 }
 
-  console.log(favoriteButton.value);
-  console.log(favoriteButton.textContent);
-
+ console.log(favoriteButton.textContent);
 
   // updating our server to different state
   DBHelper.updateFavorite(self.restaurant.id, favoriteValue, (error, response) => {
     console.log(response);
       // display that value has changed!!
 
-    favoriteButton.innerHTML = "Unfavorite";
+    // someone already loved button then -- after the response has changed > now unloving it
+    if(Response.is_favorite === true) {
+      favoriteButton.innerHTML = "Unfavorite";
+    // love it again after unloving it
+    } else {
+      favoriteButton.innerHTML = "Favorite";
+    }
+   
   });
 
 
