@@ -53,14 +53,14 @@
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
-    <button id="add-newReviewButton" class="add-newReviewButton" action="" method="post">
+    <button id="add-newReviewButton" class="add-newReviewButton">Add Review</button>
     
       <!-- Beginning footer -->
     <footer id="footer">
       Copyright (c) 2017 <a href="index.html"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
     <!-- End footer -->
-    <div class="modal-wrapper">
+    <div class="modal-wrapper" id="review-formModal">
       <div class="modal">
         <!-- Add the review form to restaurant detail page -->
         <!-- Rating choose black triangle https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this -->
@@ -79,7 +79,8 @@
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-          <button type="submit">Submit</button>
+          <button type="submit" value="Submit">Submit</button>
+          <button type="reset" value="Reset">Reset</button>
         </form>
       </div>
     </div> <!-- close modal-wrapper -->

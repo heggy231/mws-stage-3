@@ -267,3 +267,25 @@ getParameterByName = (name, url) => {
 self.addEventListener('fetch', function(event) {
   console.log(event.request);
 });
+
+
+// When submit button is pressed show the form
+document.querySelector('#add-newReviewButton').addEventListener('click', function (event) {
+  // hide button
+  var button = document.querySelector('#add-newReviewButton');
+  button.style.display = 'none';
+
+  // show review form 
+  var reviewForm = document.querySelector('#review-formModal');
+  reviewForm.style.display = 'flex';
+});
+
+document.querySelector('#reviews-form__reset').addEventListener('click', function (event) {
+  //hide form
+  var reviewForm = document.querySelector('#reviews-form');
+  reviewForm.style.display = 'none';
+
+  //show add review button
+  var button = document.querySelector('#add-review__button');
+  button.style.display = 'block';
+});
