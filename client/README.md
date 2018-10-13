@@ -2,6 +2,12 @@
 ---
 #### _Three Stage Course Material Project - Restaurant Reviews_
 
+## Stage 3:
+- How to run client webserver
+0. run backend server using node, sails
+1. cd into client dir
+2. > python -m SimpleHTTPServer 8000
+
 ## Stage 2: ###########################################################
 
 1) Run terminal, CD to API server directory: [Server code](https://github.com/heggy231/mws-restaurant-stage-2)
