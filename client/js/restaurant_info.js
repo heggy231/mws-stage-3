@@ -289,8 +289,8 @@ document.querySelector('#reviews-formReset').addEventListener('click', function 
 
 document.querySelector('#close-reviewsForm').addEventListener('click', function (event) {
   //reset data on review form
-  var reviewForm = document.querySelector('#close-reviewsForm');
-  reviewForm.style.display = 'none';
+  var button = document.querySelector('#review-formModal');
+  button.style.display = 'none';
 
 });
 
