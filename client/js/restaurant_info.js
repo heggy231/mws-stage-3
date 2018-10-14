@@ -174,7 +174,17 @@ const addReview = () => {
     ul.appendChild(createReviewHTML(reviewResponse));
     container.appendChild(ul);
     
+    // display thank you message to user for submitting a review!
     document.getElementById('review-formModal').innerHTML = '<p class="modal-wrapper-review-submit-success"><span class="close" id="close-thankyou">&times; </span>Thank you, your review has been submitted!</p>';
+
+    // close thank you message modal
+    document.querySelector('#close-thankyou').addEventListener('click', function (event) {
+      // grab review form modal and hide it 
+      var button = document.querySelector('#review-formModal');
+      button.style.display = 'none';
+    
+      // now this person already submit review Don't show the addReview button!
+    })
   });
   return false;
 };
@@ -335,10 +345,4 @@ document.querySelector('#close-reviewsForm').addEventListener('click', function 
   button.style.display = 'inline-block';
 });
 
-document.querySelector('#close-thankyou').addEventListener('click', function (event) {
-  // grab review form modal and hide it 
-  var button = document.querySelector('#review-formModal');
-  button.style.display = 'none';
 
-  // now this person already submit review Don't show the addReview button!
-})
