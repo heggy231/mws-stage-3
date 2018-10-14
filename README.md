@@ -1,5 +1,5 @@
 # mws-stage-3
-- Todo: https://scrimba.com/playlist/pL65cJ
+- Todo: watch Flexbox tutorial! https://scrimba.com/playlist/pL65cJ
 - IDB: https://github.com/jakearchibald/idb use when user has network https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
 - when refresh unfav does'nt stay line restaurant.html 44 follow the logic
 
