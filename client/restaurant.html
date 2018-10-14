@@ -56,36 +56,46 @@
     <!-- End reviews -->
     <button id="add-newReviewButton" class="add-newReviewButton">Add Review</button>
     
+
+    <div class="modal-wrapper" id="review-formModal">
+    <!-- "Thank you, your review has been submitted!"" message will be dynamically inserted here by DBHelper.postReview() -->
+      <div class="modal">
+          <!-- Add the review form to restaurant detail page -->
+          <!-- Rating choose black triangle https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this -->
+          <!-- close x button for modal for reviews form -->
+          <span class="close" id="close-reviewsForm">&times;</span>
+          <h1 id="restaurant-reviewFormHeading">Please submit your review</h1>
+          <form method="POST" id="reviews-form" onsubmit="return addReview();">
+        <!-- for="idname" is for screen reader a11y matches the input id="idname" 
+        remember to do this for every input! for a11y-->
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="e.g. John Doe"><br>
+  
+            <label for="review-comments" class="review-comments">Comments</label>
+            <textarea name="review-comments" id="review-comments" placeholder="Enter comments"></textarea><br>
+  
+            <label for="review-rating">Rating:</label>
+            <select role="checkbox" name="review-rating" id="review-rating">1
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select><br>
+            <div class="buttons-container">
+                <button type="submit" value="Submit">Submit</button>
+                
+                <button type="reset" value="Reset" id="reviews-formReset">Reset</button>
+            </div>
+          </form>
+      </div>
+    </div> <!-- close modal-wrapper -->
       <!-- Beginning footer -->
     <footer id="footer">
       Copyright (c) 2017 <a href="index.html"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
     <!-- End footer -->
-    <div class="modal-wrapper" id="review-formModal">
-      <div class="modal">
-        <!-- Add the review form to restaurant detail page -->
-        <!-- Rating choose black triangle https://stackoverflow.com/questions/6041209/html-character-codes-for-this-or-this -->
-        <!-- close x button for modal for reviews form -->
-        <span class="close" id="close-reviewsForm">&times;</span>
-        <h1 id="restaurant-reviewFormHeading">Please submit your review</h1>
-        <form method="POST" id="reviews-form" onsubmit="return addReview();">
-      <!-- for="idname" is for screen reader a11y matches the input id="idname" 
-      remember to do this for every input! for a11y-->
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="name" placeholder="e.g. John Doe">
-          <textarea name="review" id="comments" placeholder="comments"></textarea>
-          <select name="review_rating" id="rating">1
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <button type="submit" value="Submit">Submit</button>
-          <button type="reset" value="Reset" id="reviews-formReset">Reset</button>
-        </form>
-      </div>
-    </div> <!-- close modal-wrapper -->
+
 
   </main>
   <!-- End main -->

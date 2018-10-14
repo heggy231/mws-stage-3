@@ -154,8 +154,8 @@ const addReview = () => {
   console.log("have review?");
   const id = self.restaurant.id;
   const name = document.getElementById("name").value;
-  const comments = document.getElementById("comments").value;
-  const rating = document.getElementById("rating").value;
+  const comments = document.getElementById("review-comments").value;
+  const rating = document.getElementById("review-rating").value;
   const review = {
     restaurant_id:id,
     name,
@@ -313,13 +313,14 @@ document.querySelector('#add-newReviewButton').addEventListener('click', functio
 
   // show review form 
   var reviewForm = document.querySelector('#review-formModal');
+  // turns on flex box!
   reviewForm.style.display = 'flex';
 });
 
 document.querySelector('#reviews-formReset').addEventListener('click', function (event) {
   //reset data on review form
   var reviewForm = document.querySelector('#reviews-formReset');
-  reviewForm.style.display = 'none';
+  // reviewForm.style.display = 'none';
 
 });
 
@@ -328,5 +329,8 @@ document.querySelector('#close-reviewsForm').addEventListener('click', function 
   var button = document.querySelector('#review-formModal');
   button.style.display = 'none';
 
+  // put the add review button back on again
+  var button = document.querySelector('#add-newReviewButton');
+  button.style.display = 'inline-block';
 });
 
