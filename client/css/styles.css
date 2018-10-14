@@ -323,6 +323,15 @@ nav[aria-label="breadcrumb"] {
 #reviews-list li p {
   margin: 0 0 .5rem;
 }
+
+/* Thank you message styling success submit of new review */
+.modal-wrapper-review-submit-success {
+  padding: 2rem;
+  text-align: center;
+  font-size: 2.2rem;
+  background-color: #252831;
+  color: #fff;
+}
 #restaurant-hours td {
   color: #666;
 }

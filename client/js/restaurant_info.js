@@ -168,12 +168,13 @@ const addReview = () => {
     // adding review to DOM
     document.getElementById('reviews-form').reset();
 
-    // // add review with others
+    // add review with others
     const container = document.getElementById('reviews-container');
     const ul = document.getElementById('reviews-list');
     ul.appendChild(createReviewHTML(reviewResponse));
     container.appendChild(ul);
-    // document.getElementById('reviews-form-container').innerHTML = '<h3 class="review-form-container__message--sucess">Thank you for adding a review!</h3>';
+    
+    document.getElementById('review-formModal').innerHTML = '<p class="modal-wrapper-review-submit-success"><span class="close" id="close-thankyou">&times; </span>Thank you, your review has been submitted!</p>';
   });
   return false;
 };
@@ -325,7 +326,7 @@ document.querySelector('#reviews-formReset').addEventListener('click', function 
 });
 
 document.querySelector('#close-reviewsForm').addEventListener('click', function (event) {
-  //reset data on review form
+  // grab review form modal and hide it 
   var button = document.querySelector('#review-formModal');
   button.style.display = 'none';
 
@@ -334,3 +335,10 @@ document.querySelector('#close-reviewsForm').addEventListener('click', function 
   button.style.display = 'inline-block';
 });
 
+document.querySelector('#close-thankyou').addEventListener('click', function (event) {
+  // grab review form modal and hide it 
+  var button = document.querySelector('#review-formModal');
+  button.style.display = 'none';
+
+  // now this person already submit review Don't show the addReview button!
+})
