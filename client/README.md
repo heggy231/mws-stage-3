@@ -8,6 +8,8 @@
 1. cd into client dir
 2. > python -m SimpleHTTPServer 8000
 
+Todo: make sure you can tell you are online or offline
+
 ## Stage 2: ###########################################################
 
 1) Run terminal, CD to API server directory: [Server code](https://github.com/heggy231/mws-restaurant-stage-2)

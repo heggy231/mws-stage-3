@@ -23,6 +23,7 @@ class DBHelper {
   // fetch db restaurants
   static fetchRestaurants(callback) {
     return dbPromise.then(db => {
+      // getting the cached restaurant database
       return db.transaction('keyval')
         .objectStore('keyval').get('restaurants');
     }).then(function(val) {
@@ -35,9 +36,10 @@ class DBHelper {
         .then(fetchedRestaurants => {
           callback(null, fetchedRestaurants);
           dbPromise.then(function(db) {
+          // Putting the cached into the iDB
             var tx = db.transaction('keyval', 'readwrite');
             var keyValStore = tx.objectStore('keyval');
-  
+      
             keyValStore.put(fetchedRestaurants, 'restaurants');
             return tx.complete;
           }).then(function() {
@@ -62,9 +64,8 @@ class DBHelper {
       });
   }
 
-  // add my review of restaurant from form and send to database persist
+  // add my review of restaurant from form and send to database so it persists
   static addReview(review, callback) {
-
 
     fetch('http://localhost:1337/reviews/', {
       method: 'post',

@@ -1,5 +1,8 @@
 let restaurant;
 var newMap;
+const dbPromise = idb.open('keyval-store', 1, upgradeDB => {
+  upgradeDB.createObjectStore('keyval');
+});
 
 /**
  * Initialize map as soon as the page is loaded.
@@ -150,8 +153,9 @@ const fetchReviewsByRestaurantID = (restaurantID, callback) => {
   });
 };
 
+// This adds review upto server from the review form
 const addReview = () => {
-  console.log("have review?");
+  console.log("Server do you have review?");
   const id = self.restaurant.id;
   const name = document.getElementById("name").value;
   const comments = document.getElementById("review-comments").value;
@@ -162,30 +166,45 @@ const addReview = () => {
     rating: parseInt(rating),
     comments
   };
-  DBHelper.addReview(review, (error, reviewResponse) => {
-    // what do i want to happen after review is in database
-    console.log(reviewResponse);
-    // adding review to DOM
-    document.getElementById('reviews-form').reset();
+  // resource on online check or offline https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
+  if(navigator.onLine) {
+    // user online do the regular save to the server
+    DBHelper.addReview(review, (error, reviewResponse) => {
+      // what do i want to happen after review is in database
+      console.log(reviewResponse);
+      // adding review to DOM
+      document.getElementById('reviews-form').reset();
+  
+      // add review with others
+      const container = document.getElementById('reviews-container');
+      const ul = document.getElementById('reviews-list');
+      ul.appendChild(createReviewHTML(reviewResponse));
+      container.appendChild(ul);
+      
+      // display thank you message to user for submitting a review!
+      document.getElementById('review-formModal').innerHTML = '<p class="modal-wrapper-review-submit-success"><span class="close" id="close-thankyou">&times; </span>Thank you, your review has been submitted!</p>';
+  
+      // close thank you message modal
+      document.querySelector('#close-thankyou').addEventListener('click', function (event) {
+        // grab review form modal and hide it 
+        var button = document.querySelector('#review-formModal');
+        button.style.display = 'none';
+      
+        // now this person already submit review Don't show the addReview button!
+      })
+    });
+  } else {
+    // put inside of the iDB (temporary Database)
+    dbPromise.then(function(db) {
+      // Putting the cached into the iDB
+      var tx = db.transaction('keyval', 'readwrite');
+      var keyValStore = tx.objectStore('keyval');
 
-    // add review with others
-    const container = document.getElementById('reviews-container');
-    const ul = document.getElementById('reviews-list');
-    ul.appendChild(createReviewHTML(reviewResponse));
-    container.appendChild(ul);
-    
-    // display thank you message to user for submitting a review!
-    document.getElementById('review-formModal').innerHTML = '<p class="modal-wrapper-review-submit-success"><span class="close" id="close-thankyou">&times; </span>Thank you, your review has been submitted!</p>';
-
-    // close thank you message modal
-    document.querySelector('#close-thankyou').addEventListener('click', function (event) {
-      // grab review form modal and hide it 
-      var button = document.querySelector('#review-formModal');
-      button.style.display = 'none';
-    
-      // now this person already submit review Don't show the addReview button!
-    })
-  });
+      keyValStore.put(review, 'deferredReview');
+      return tx.complete;
+    });
+  }
+  
   return false;
 };
 
