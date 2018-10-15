@@ -345,4 +345,8 @@ document.querySelector('#close-reviewsForm').addEventListener('click', function 
   button.style.display = 'inline-block';
 });
 
+// listen if the user is offline | online
+window.addEventListener('offline', function(e) { console.log('offline'); });
+
+window.addEventListener('online', function(e) { console.log('online'); });
 
