@@ -253,6 +253,23 @@ class DBHelper {
         console.log('Success:', response);
 
         callback(null, response);
+      // update the cache when I favorite restaurant
+        fetch(DBHelper.DATABASE_URL)
+        .then(response => response.json())
+        .then(fetchedRestaurants => {
+          callback(null, fetchedRestaurants);
+          dbPromise.then(function(db) {
+          // Putting the cached into the iDB
+            var tx = db.transaction('keyval', 'readwrite');
+            var keyValStore = tx.objectStore('keyval');
+      
+            keyValStore.put(fetchedRestaurants, 'restaurants');
+            return tx.complete;
+          }).then(function() {
+            console.log('Added restaurant data');
+        
+          });
+        });
       });
   }
 }

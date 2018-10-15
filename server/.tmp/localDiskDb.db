@@ -21,9 +21,9 @@
           "Sunday": "12:00 pm - 4:00 pm, 5:30 pm - 11:00 pm"
         },
         "createdAt": 1504095563444,
-        "updatedAt": "2018-10-14T06:57:33.227Z",
+        "updatedAt": "2018-10-15T07:15:24.878Z",
         "id": 1,
-        "is_favorite": false
+        "is_favorite": true
       },
       {
         "name": "Emily",
@@ -654,6 +654,42 @@
         "createdAt": "2018-10-15T06:29:15.240Z",
         "updatedAt": "2018-10-15T06:29:15.240Z",
         "id": 47
+      },
+      {
+        "restaurant_id": 1,
+        "name": "deferred Review",
+        "rating": 3,
+        "comments": "Working?",
+        "createdAt": "2018-10-15T06:45:54.753Z",
+        "updatedAt": "2018-10-15T06:45:54.753Z",
+        "id": 48
+      },
+      {
+        "request": {},
+        "createdAt": "2018-10-15T06:49:45.652Z",
+        "updatedAt": "2018-10-15T06:49:45.652Z",
+        "id": 49
+      },
+      {
+        "restaurant_id": 1,
+        "name": "Hello Kitty",
+        "rating": 4,
+        "comments": "Fun fun",
+        "createdAt": "2018-10-15T06:55:24.515Z",
+        "updatedAt": "2018-10-15T06:55:24.515Z",
+        "id": 50
+      },
+      {
+        "request": {},
+        "createdAt": "2018-10-15T06:56:38.585Z",
+        "updatedAt": "2018-10-15T06:56:38.585Z",
+        "id": 51
+      },
+      {
+        "request": {},
+        "createdAt": "2018-10-15T06:57:19.922Z",
+        "updatedAt": "2018-10-15T06:57:19.922Z",
+        "id": 52
       }
     ]
   },
@@ -709,7 +745,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 47
+      "id": 52
     }
   }
 }

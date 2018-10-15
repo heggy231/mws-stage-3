@@ -96,7 +96,11 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const favoriteButton = document.getElementById("favorite-button");
 
+  console.log("are you working fillRestaurantHoursHTML");
+  console.log(restaurant);
+  // debugger;
   if(restaurant.is_favorite === true) {
+    console.log("are you working Unfavorite");
     favoriteButton.innerHTML = "Unfavorite";
   // love it again after unloving it
   } else {
@@ -210,6 +214,7 @@ const addReview = () => {
 
 // love restaurant on restaurant.html page
 const setFavorite = () => {
+  debugger;
   console.log("setFavorite getting called now?");
   const favoriteButton = document.getElementById("favorite-button");
 
@@ -403,7 +408,8 @@ window.addEventListener('online', function(e) {
           // now this person already submit review Don't show the addReview button!
         })
       // checking if there no deferredReview exist in my tempDB then do nothing
-      }).then(function(db) {
+      }); 
+      dbPromise.then(function(db) {
         // Putting the cached into the iDB
         var tx = db.transaction('keyval', 'readwrite');
         var keyValStore = tx.objectStore('keyval');
