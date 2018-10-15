@@ -1,8 +1,8 @@
 let restaurant;
 var newMap;
-const dbPromise = idb.open('keyval-store', 1, upgradeDB => {
-  upgradeDB.createObjectStore('keyval');
-});
+// const dbPromise = idb.open('keyval-store', 1, upgradeDB => {
+//   upgradeDB.createObjectStore('keyval');
+// });
 
 /**
  * Initialize map as soon as the page is loaded.
@@ -365,7 +365,55 @@ document.querySelector('#close-reviewsForm').addEventListener('click', function 
 });
 
 // listen if the user is offline | online
-window.addEventListener('offline', function(e) { console.log('offline'); });
+window.addEventListener('offline', function(e) { 
+  console.log('offline'); 
+});
 
-window.addEventListener('online', function(e) { console.log('online'); });
+// I am online fetch deferredReview temp database and insert to my live database
+window.addEventListener('online', function(e) { 
+  console.log('online'); 
+  dbPromise.then(db => {
+    // getting the cached restaurant database
+    var review = db.transaction('keyval')
+      .objectStore('keyval').get('deferredReview');
+
+    // if there is review waiting deferredReview database then add that review upto the server
+    if(review) {
+      DBHelper.addReview(review, (error, reviewResponse) => {
+        // what do i want to happen after review is in database
+        console.log(reviewResponse);
+        // adding review to DOM
+        document.getElementById('reviews-form').reset();
+    
+        // add review with others
+        const container = document.getElementById('reviews-container');
+        const ul = document.getElementById('reviews-list');
+        ul.appendChild(createReviewHTML(reviewResponse));
+        container.appendChild(ul);
+        
+        // display thank you message to user for submitting a review!
+        document.getElementById('review-formModal').innerHTML = '<p class="modal-wrapper-review-submit-success"><span class="close" id="close-thankyou">&times; </span>Thank you, your review has been submitted!</p>';
+    
+        // close thank you message modal
+        document.querySelector('#close-thankyou').addEventListener('click', function (event) {
+          // grab review form modal and hide it 
+          var button = document.querySelector('#review-formModal');
+          button.style.display = 'none';
+        
+          // now this person already submit review Don't show the addReview button!
+        })
+      // checking if there no deferredReview exist in my tempDB then do nothing
+      }).then(function(db) {
+        // Putting the cached into the iDB
+        var tx = db.transaction('keyval', 'readwrite');
+        var keyValStore = tx.objectStore('keyval');
+  
+        // false means there is no deferred review > do nothing
+        keyValStore.put(false, 'deferredReview');
+        return tx.complete;
+      });
+    }
+    
+  });
+});
 

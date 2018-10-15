@@ -645,6 +645,15 @@
         "createdAt": "2018-10-15T05:53:52.110Z",
         "updatedAt": "2018-10-15T05:53:52.110Z",
         "id": 46
+      },
+      {
+        "restaurant_id": 1,
+        "name": "Love shack",
+        "rating": 5,
+        "comments": "Love Love",
+        "createdAt": "2018-10-15T06:29:15.240Z",
+        "updatedAt": "2018-10-15T06:29:15.240Z",
+        "id": 47
       }
     ]
   },
@@ -700,7 +709,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 46
+      "id": 47
     }
   }
 }
