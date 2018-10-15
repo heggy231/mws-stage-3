@@ -214,7 +214,7 @@ const addReview = () => {
 
 // love restaurant on restaurant.html page
 const setFavorite = () => {
-  debugger;
+  // debugger;
   console.log("setFavorite getting called now?");
   const favoriteButton = document.getElementById("favorite-button");
 
