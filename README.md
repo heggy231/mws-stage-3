@@ -9,7 +9,7 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 > 2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
 ====
 
-2) cd to server folder: Development local API Server
+2) cd to server folder to start the development local API Server
 _Location of server = /server_
 Server depends on [node.js LTS Version: v6.11.2 ](https://nodejs.org/en/download/), [npm](https://www.npmjs.com/get-npm), and [sails.js](http://sailsjs.com/)
 Please make sure you have these installed before proceeding forward.
