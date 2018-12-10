@@ -1,7 +1,7 @@
 # mws-stage-3
 Run mws files:
 1) cd to client folder
-` cd /Users/Heggy/Desktop/mws-stage-3/client`
+` cd /Users/yourname/Desktop/mws-stage-3/client`
 ====
 > 1. start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer. 
 
@@ -14,7 +14,7 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 ====
 
 2) cd to server folder to start the development local API Server
-# cd /Users/Heggy/Desktop/mws-stage-3/server
+# cd /Users/yourname/Desktop/mws-stage-3/server
 ===
 _Location of server = /server_
 Server depends on [node.js LTS Version: v6.11.2 ](https://nodejs.org/en/download/), [npm](https://www.npmjs.com/get-npm), and [sails.js](http://sailsjs.com/)
