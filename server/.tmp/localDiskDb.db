@@ -45,8 +45,8 @@
           "Sunday": "12:00 pm - 3:00 pm, 5:00 pm - 11:00 pm"
         },
         "createdAt": 1504095568414,
-        "updatedAt": "2017-09-14T14:05:54.800Z",
-        "is_favorite": false,
+        "updatedAt": "2018-12-10T07:19:20.069Z",
+        "is_favorite": true,
         "id": 2
       },
       {
@@ -188,8 +188,8 @@
           "Sunday": "10:00 am - 3:00 pm, 5:30 pm - 11:00 pm"
         },
         "createdAt": 1504095567091,
-        "updatedAt": 1504095567091,
-        "is_favorite": false,
+        "updatedAt": "2018-12-10T07:18:26.933Z",
+        "is_favorite": true,
         "id": 8
       },
       {
@@ -690,6 +690,15 @@
         "createdAt": "2018-10-15T06:57:19.922Z",
         "updatedAt": "2018-10-15T06:57:19.922Z",
         "id": 52
+      },
+      {
+        "restaurant_id": 2,
+        "name": "Heggy",
+        "rating": 4,
+        "comments": "funny",
+        "createdAt": "2018-12-10T07:19:10.397Z",
+        "updatedAt": "2018-12-10T07:19:10.397Z",
+        "id": 53
       }
     ]
   },
@@ -745,7 +754,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 52
+      "id": 53
     }
   }
 }
