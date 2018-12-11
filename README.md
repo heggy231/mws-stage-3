@@ -1,6 +1,6 @@
 # mws-stage-3
 Mobile Web Specialist Certification Course
-![Demo](https://cdn.glitch.com/cb093bfd-142f-45b3-bdb4-52ff49e0a1c2%2FrestaurantDemo.mp4?1544493276576)
+![Front Page](https://media.giphy.com/media/8PdFks4w7rEtHJx0nm/giphy.gif)
 
 ---
 
