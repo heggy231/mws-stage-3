@@ -1,6 +1,7 @@
 # mws-stage-3
 Mobile Web Specialist Certification Course
 [Demo](https://cdn.glitch.com/cb093bfd-142f-45b3-bdb4-52ff49e0a1c2%2FrestaurantDemo.mp4?1544493276576)
+https://cdn.glitch.com/cb093bfd-142f-45b3-bdb4-52ff49e0a1c2%2FrestaurantDemo.mp4?1544493276576
 ---
 
 **To run my version of the project** - install all the dependencies with 'npm install', then run 'gulp start'. That will trigger gulp to compile all the files and start browser-sync, which will automatically launch a browser window pointing to localhost. 
