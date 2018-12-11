@@ -1,6 +1,9 @@
 # mws-stage-3
 Mobile Web Specialist Certification Course
+
 ![Front Page](https://media.giphy.com/media/8PdFks4w7rEtHJx0nm/giphy.gif)
+![New Review](https://media.giphy.com/media/1BG0dM0JeFAih56jHd/giphy.gif)
+![Responsive](https://media.giphy.com/media/4JY3sJgdGWcdtM1jdJ/giphy.gif)
 
 ---
 
